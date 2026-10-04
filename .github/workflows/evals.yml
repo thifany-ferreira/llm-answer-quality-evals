@@ -1,0 +1,50 @@
+name: Avaliação de qualidade
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      llm_real:
+        description: "Avaliar também o Claude de verdade (requer o secret ANTHROPIC_API_KEY)"
+        type: boolean
+        default: false
+
+jobs:
+  avaliacao:
+    name: Testes + avaliação
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt ruff
+
+      - name: Lint
+        run: ruff check . && ruff format --check .
+
+      - name: Testes unitários e de ponta a ponta
+        run: pytest
+
+      - name: Avaliar o assistente (precisa passar nas metas)
+        run: python -m evals.run --model simulado
+
+      - name: Prova de eficácia (o assistente defeituoso precisa ser reprovado)
+        run: python -m evals.run --model alucina --expect-fail
+
+      - name: Avaliar o Claude com juiz LLM
+        if: ${{ inputs.llm_real }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m evals.run --model claude --judge
+
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: relatorios-avaliacao-${{ github.run_number }}
+          path: reports/

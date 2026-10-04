@@ -1,0 +1,68 @@
+# Base de conhecimento da Loja Aurora (loja FICTÍCIA).
+# É a única fonte de verdade que o assistente pode usar para responder.
+# Cada fato tem a mesma informação nos três idiomas atendidos.
+# "termos" é o índice de busca: palavras que os clientes usam para perguntar sobre aquele fato.
+
+fatos:
+  - id: frete-gratis
+    fonte: frete
+    termos: [gratis, gratuito, frete gratis, nao pago frete, nao pagar frete, free shipping, envio gratis]
+    pt: Frete grátis para compras acima de R$ 199,00.
+    es: Envío gratis en compras superiores a R$ 199,00.
+    en: Free shipping on orders over R$ 199,00.
+
+  - id: frete-valor
+    fonte: frete
+    termos: [frete, valor do frete, custa o frete, quanto e o frete, shipping cost, how much is shipping, shipping, costo de envio, cuanto cuesta el envio, envio cuesta]
+    pt: Para compras abaixo de R$ 199,00, o frete tem valor fixo de R$ 19,90.
+    es: En compras inferiores a R$ 199,00, el envío tiene un valor fijo de R$ 19,90.
+    en: For orders under R$ 199,00, shipping is a flat R$ 19,90.
+
+  - id: prazo-entrega
+    fonte: entrega
+    termos: [prazo, entrega, chega, demora, quantos dias, delivery, arrive, how long, plazo, llega, tarda, cuantos dias]
+    pt: Capitais recebem em até 3 dias úteis e as demais cidades em até 7 dias úteis.
+    es: Las capitales reciben en hasta 3 días hábiles y las demás ciudades en hasta 7 días hábiles.
+    en: State capitals receive orders within 3 business days and other cities within 7 business days.
+
+  - id: troca-prazo
+    fonte: trocas
+    termos: [prazo para trocar, prazo de troca, prazo para devolver, troca, trocar, devolucao, devolver, return, exchange, cambio, cambiar, devolucion]
+    pt: Você pode trocar ou devolver o produto em até 30 dias após o recebimento, desde que esteja sem uso.
+    es: Puedes cambiar o devolver el producto hasta 30 días después de recibirlo, siempre que no esté usado.
+    en: You can exchange or return the product within 30 days of receiving it, as long as it is unused.
+
+  - id: reembolso
+    fonte: trocas
+    termos: [reembolso, estorno, dinheiro de volta, refund, money back, reintegro]
+    pt: O reembolso é feito em até 10 dias úteis depois que recebemos o produto devolvido.
+    es: El reembolso se realiza en hasta 10 días hábiles después de que recibimos el producto devuelto.
+    en: Refunds are issued within 10 business days after we receive the returned product.
+
+  - id: formas-pagamento
+    fonte: pagamento
+    termos: [pagamento, pagar, formas de pagamento, parcelar, parcela, cartao, boleto, payment, pay, installments, credit card, pago, pagar, cuotas, tarjeta]
+    pt: Aceitamos cartão de crédito em até 6x sem juros, Pix e boleto.
+    es: Aceptamos tarjeta de crédito en hasta 6 cuotas sin intereses, Pix y boleto.
+    en: We accept credit cards in up to 6 interest-free installments, Pix and boleto.
+
+  - id: desconto-pix
+    fonte: pagamento
+    termos: [desconto no pix, desconto pix, pix tem desconto, pix discount, discount with pix, descuento pix, descuento con pix]
+    pt: Pagamentos via Pix têm 5% de desconto.
+    es: Los pagos con Pix tienen 5% de descuento.
+    en: Payments with Pix get a 5% discount.
+
+  - id: atendimento
+    fonte: atendimento
+    termos: [atendimento, horario, contato, falar com, suporte, support, contact, opening hours, talk to, horario de atencion, contacto, hablar con]
+    pt: O atendimento funciona de segunda a sexta, das 9h às 18h, pelo chat ou pelo e-mail suporte@lojaaurora.exemplo.
+    es: La atención funciona de lunes a viernes, de 9h a 18h, por el chat o por el correo suporte@lojaaurora.exemplo.
+    en: Support is available Monday to Friday, from 9h to 18h, via chat or at suporte@lojaaurora.exemplo.
+
+  - id: garantia
+    fonte: garantia
+    termos: [garantia, defeito, quebrou, warranty, defect, broken, garantia, defecto, se rompio]
+    pt: Todos os produtos têm garantia de 12 meses contra defeitos de fabricação.
+    es: Todos los productos tienen garantía de 12 meses contra defectos de fabricación.
+    en: All products have a 12-month warranty against manufacturing defects.
